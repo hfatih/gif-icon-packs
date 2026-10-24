@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gif Icon Packs — 15 Tuşlu Stream Deck & evoX İnteraktif Simülatör</title>
+  <meta name="description" content="226 Benzersiz Hareketli GIF İkonlu Stream Deck ve evoX Donanım Simülatörü ve Vitrin Galerisi.">
+  <link rel="icon" type="image/png" href="cover.png">
+  <style>
+    :root {
+      --bg: #0b070f;
+      --panel: #160f1e;
+      --card: #20152b;
+      --card-hover: #2d1c3e;
+      --accent: #f0abc5;
+      --accent-secondary: #c084fc;
+      --accent-glow: rgba(240, 171, 197, 0.45);
+      --purple-glow: rgba(192, 132, 252, 0.35);
+      --text: #fdf2f8;
+      --text-muted: #d8b4e2;
+      --border: #3b2552;
+      --border-focus: #e7a0b9;
+      --deck-body: #100a18;
+      --deck-bezel: #251733;
+      --key-border: #44285e;
+      --key-glow: 0 0 16px rgba(240, 171, 197, 0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      background-image: radial-gradient(circle at 50% 0%, #261239 0%, #0b070f 75%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    header {
+      background: rgba(22, 15, 30, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1.1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand-logo-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f0abc5, #9333ea);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px var(--accent-glow);
+      font-size: 1.5rem;
+      overflow: hidden;
+      padding: 2px;
+    }
+    .brand h1 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #fff, #f0abc5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .brand p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .header-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .btn {
+      background: linear-gradient(135deg, #e7a0b9, #c084fc);
+      color: #100a18;
+      padding: 0.55rem 1.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px var(--accent-glow);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px var(--accent-glow);
+    }
+    .btn-outline {
+      background: rgba(32, 21, 43, 0.6);
+      border: 1px solid var(--border);
+      color: var(--text);
+      box-shadow: none;
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      background: rgba(240, 171, 197, 0.12);
+      color: #fff;
+    }
+    
+    main {
+      flex: 1;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2.2rem 1.5rem;
+      width: 100%;
+    }
+    
+    /* 15-KEY STREAM DECK HARDWARE SIMULATOR */
+    .simulator-container {
+      background: linear-gradient(180deg, rgba(28, 18, 40, 0.85) 0%, rgba(18, 11, 26, 0.95) 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2.2rem;
+      margin-bottom: 2.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .simulator-container::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 450px;
+      height: 200px;
+      background: radial-gradient(ellipse, var(--purple-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .sim-header {
+      text-align: center;
+      margin-bottom: 1.8rem;
+      position: relative;
+      z-index: 2;
+    }
+    .sim-badge {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: rgba(240, 171, 197, 0.15);
+      border: 1px solid rgba(240, 171, 197, 0.35);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.6rem;
+    }
+    .sim-header h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.5px;
+    }
+    .sim-header p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    
+    /* HARDWARE DECK CASING */
+    .deck-frame {
+      background: linear-gradient(145deg, #181022, #0d0714);
+      border: 3px solid var(--deck-bezel);
+      border-radius: 28px;
+      padding: 24px 26px;
+      box-shadow: 
+        inset 0 2px 10px rgba(255, 255, 255, 0.05),
+        inset 0 -8px 20px rgba(0, 0, 0, 0.9),
+        0 18px 45px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(192, 132, 252, 0.15);
+      position: relative;
+    }
+    .deck-frame::after {
+      content: "STREAM DECK • EVOX";
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      font-weight: 800;
+      color: rgba(216, 180, 226, 0.35);
+    }
+    
+    /* 5 COLUMNS x 3 ROWS GRID = 15 KEYS */
+    .deck-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 84px);
+      grid-template-rows: repeat(3, 84px);
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    
+    .deck-key {
+      width: 84px;
+      height: 84px;
+      background: radial-gradient(circle at 50% 30%, #1e132b 0%, #0d0714 100%);
+      border: 2px solid var(--key-border);
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+      box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.08), 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+    .deck-key:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: var(--key-glow), 0 8px 18px rgba(0, 0, 0, 0.8);
+    }
+    .deck-key.active-slot {
+      border-color: #fff;
+      box-shadow: 0 0 24px rgba(240, 171, 197, 0.9), inset 0 0 12px rgba(255, 255, 255, 0.4);
+      transform: scale(1.06);
+    }
+    .deck-key img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+    .deck-key .slot-num {
+      position: absolute;
+      top: 4px;
+      left: 6px;
+      font-size: 0.6rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.45);
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1px 4px;
+      border-radius: 4px;
+      pointer-events: none;
+    }
+    
+    .sim-controls {
+      margin-top: 1.4rem;
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .sim-btn {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+    .sim-btn:hover {
+      background: var(--panel);
+      color: var(--text);
+      border-color: var(--accent);
+    }
+    
+    /* SEARCH AND FILTER BAR */
+    .controls-panel {
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .search-input-wrap {
+      position: relative;
+      width: 100%;
+    }
+    .search-input {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.85rem 1.4rem 0.85rem 3rem;
+      border-radius: 14px;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+    .search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 16px var(--accent-glow);
+    }
+    .search-icon {
+      position: absolute;
+      left: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+    
+    .filter-tabs {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: var(--card);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1.1rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover {
+      background: var(--panel);
+      color: var(--text);
+      border-color: var(--accent);
+    }
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      color: #100a18;
+      border-color: transparent;
+      font-weight: 700;
+      box-shadow: 0 4px 12px var(--accent-glow);
+    }
+    
+    /* GALLERY GRID */
+    .gallery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+    .gallery-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .gallery-count {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
+      gap: 16px;
+    }
+    .icon-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .icon-card:hover {
+      background: var(--card-hover);
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), 0 0 16px var(--purple-glow);
+    }
+    .icon-card .img-wrap {
+      width: 88px;
+      height: 88px;
+      border-radius: 14px;
+      background: #100a18;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .icon-info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .icon-name {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+    }
+    .icon-category {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+    }
+    .hint-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(22, 15, 30, 0.95);
+      border: 1px solid var(--accent);
+      color: var(--text);
+      padding: 0.8rem 1.4rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+      font-size: 0.88rem;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      gap: 0.6rem;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @media (max-width: 600px) {
+      .deck-grid {
+        grid-template-columns: repeat(5, 56px);
+        grid-template-rows: repeat(3, 56px);
+        gap: 8px;
+      }
+      .deck-key {
+        width: 56px;
+        height: 56px;
+        border-radius: 10px;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+        gap: 10px;
+      }
+      .icon-card .img-wrap {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-logo-wrap"><img src="icons/wand.gif" alt="Wand" style="width:100%;height:100%;object-fit:cover;border-radius:10px;"></div>
+      <div>
+        <h1>Gif Icon Packs</h1>
+        <p>226 Benzersiz Hareketli GIF İkon • Wand Sihirli Değnek Edition • Neon Pulse • Cyber VFX</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a href="Gif Icon Packs.evoxpack" class="btn" download>📦 .evoxpack İndir (226 İkon - 33 MB)</a>
+      <a href="atomic_peach_gallery.html" class="btn btn-outline">🍑 Atomic Peach Galerisi</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 15-KEY HARDWARE STREAM DECK SIMULATOR -->
+    <div class="simulator-container">
+      <div class="sim-header">
+        <span class="sim-badge">15 Tuşlu Donanım Konsolu</span>
+        <h2>Stream Deck & evoX Canlı Konsol Simülatörü</h2>
+        <p>Aşağıdaki galeriden herhangi bir hareketli ikona tıklayarak seçili tuşa yerleştirin veya tuşları deneyin</p>
+      </div>
+      
+      <div class="deck-frame">
+        <div class="deck-grid" id="deckGrid"></div>
+      </div>
+      
+      <div class="sim-controls">
+        <button class="sim-btn" id="btnRandomFill">🎲 Rastgele 15 Tuş Doldur</button>
+        <button class="sim-btn" id="btnResetDeck">↺ Varsayılana Sıfırla</button>
+      </div>
+    </div>
+
+    <!-- CONTROLS & FILTER -->
+    <div class="controls-panel">
+      <div class="search-input-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="İkon ara (wand, xenon, ide, code, tunnel, discord, neon, gta, sound...)...">
+      </div>
+
+      <div class="filter-tabs" id="filterTabs">
+<button class="filter-btn active" data-filter="all">Tümü (226)</button>
+      <button class="filter-btn" data-filter="Xenon Serisi">Xenon Serisi (7)</button>
+      <button class="filter-btn" data-filter="Retro Gaming & Klasikler">Retro Gaming & Klasikler (6)</button>
+      <button class="filter-btn" data-filter="Developer & Kodlama">Developer & Kodlama (46)</button>
+      <button class="filter-btn" data-filter="Cyber, VFX & Partiküller">Cyber, VFX & Partiküller (40)</button>
+      <button class="filter-btn" data-filter="Doğa & Ambient">Doğa & Ambient (27)</button>
+      <button class="filter-btn" data-filter="Medya & Ses">Medya & Ses (17)</button>
+      <button class="filter-btn" data-filter="Sosyal Medya & Markalar">Sosyal Medya & Markalar (6)</button>
+      <button class="filter-btn" data-filter="Neon Kontroller & UI">Neon Kontroller & UI (77)</button>
+      </div>
+    </div>
+
+    <!-- GALLERY GRID -->
+    <div class="gallery-header">
+      <div class="gallery-title" id="galleryTitle">Tüm İkonlar</div>
+      <div class="gallery-count" id="galleryCount">226 İkon Gösteriliyor</div>
+    </div>
+    
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </main>
+
+  <div class="hint-toast" id="hintToast">
+    <span style="font-size: 1.2rem;">✨</span>
+    <span id="hintText">Tuş güncellendi!</span>
+  </div>
+
+  <script>
+    const INITIAL_KEYS = ["wand.gif", "code_ide_001.gif", "particle_tunnel_001.gif", "spotify.gif", "xenon_027_cyan.gif", "grand_theft_auto.gif", "chat_001.gif", "xenon_027_amber.gif", "discord.gif", "alien_ufo_akte_x_i_want_to_believe.gif", "scan_pulse_002.gif", "xenon_027_emerald.gif", "heart_on.gif", "moon_reflection_001.gif", "xenon_027_crimson.gif"];
+    const ASSETS = [{"id": "gif-airplane-off", "name": "Airplane (Kapalı)", "filename": "airplane_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-airplane-on", "name": "Airplane (Açık)", "filename": "airplane_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-alien-ufo-akte-x-i-want-to-believe", "name": "Alien UFO Akte X I Want To Believe", "filename": "alien_ufo_akte_x_i_want_to_believe.gif", "category": "Retro Gaming & Klasikler"}, {"id": "gif-aquarium-000", "name": "Aquarium 000", "filename": "aquarium_000.gif", "category": "Doğa & Ambient"}, {"id": "gif-balls-000", "name": "Balls 000", "filename": "balls_000.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-battery", "name": "Battery", "filename": "battery.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-bell-off", "name": "Bell (Kapalı)", "filename": "bell_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-bell-on", "name": "Bell (Açık)", "filename": "bell_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-biohazard-028", "name": "Biohazard 028", "filename": "biohazard_028.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-bluetooth-off", "name": "Bluetooth (Kapalı)", "filename": "bluetooth_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-bluetooth-on", "name": "Bluetooth (Açık)", "filename": "bluetooth_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-bolt", "name": "Bolt", "filename": "bolt.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-bookmark", "name": "Bookmark", "filename": "bookmark.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-bulb-off", "name": "Bulb (Kapalı)", "filename": "bulb_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-bulb-on", "name": "Bulb (Açık)", "filename": "bulb_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-calendar", "name": "Calendar", "filename": "calendar.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-camera-off", "name": "Camera (Kapalı)", "filename": "camera_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-camera-on", "name": "Camera (Açık)", "filename": "camera_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-chart", "name": "Chart", "filename": "chart.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-chat-001", "name": "Chat 001", "filename": "chat_001.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-002", "name": "Chat 002", "filename": "chat_002.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-003", "name": "Chat 003", "filename": "chat_003.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-004", "name": "Chat 004", "filename": "chat_004.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-005", "name": "Chat 005", "filename": "chat_005.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-007", "name": "Chat 007", "filename": "chat_007.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-008", "name": "Chat 008", "filename": "chat_008.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-009", "name": "Chat 009", "filename": "chat_009.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-010", "name": "Chat 010", "filename": "chat_010.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-011", "name": "Chat 011", "filename": "chat_011.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-012", "name": "Chat 012", "filename": "chat_012.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-013", "name": "Chat 013", "filename": "chat_013.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-014", "name": "Chat 014", "filename": "chat_014.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-015", "name": "Chat 015", "filename": "chat_015.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-016", "name": "Chat 016", "filename": "chat_016.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-017", "name": "Chat 017", "filename": "chat_017.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-018", "name": "Chat 018", "filename": "chat_018.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-019", "name": "Chat 019", "filename": "chat_019.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-020", "name": "Chat 020", "filename": "chat_020.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-022", "name": "Chat 022", "filename": "chat_022.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-023", "name": "Chat 023", "filename": "chat_023.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-024", "name": "Chat 024", "filename": "chat_024.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-025", "name": "Chat 025", "filename": "chat_025.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-026", "name": "Chat 026", "filename": "chat_026.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-027", "name": "Chat 027", "filename": "chat_027.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-028", "name": "Chat 028", "filename": "chat_028.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-029", "name": "Chat 029", "filename": "chat_029.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-031", "name": "Chat 031", "filename": "chat_031.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-032", "name": "Chat 032", "filename": "chat_032.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-off", "name": "Chat (Kapalı)", "filename": "chat_off.gif", "category": "Developer & Kodlama"}, {"id": "gif-chat-on", "name": "Chat (Açık)", "filename": "chat_on.gif", "category": "Developer & Kodlama"}, {"id": "gif-clapper", "name": "Clapper", "filename": "clapper.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-clock", "name": "Clock", "filename": "clock.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-cloud", "name": "Cloud", "filename": "cloud.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-clouds-016", "name": "Clouds 016", "filename": "clouds_016.gif", "category": "Doğa & Ambient"}, {"id": "gif-clouds-019", "name": "Clouds 019", "filename": "clouds_019.gif", "category": "Doğa & Ambient"}, {"id": "gif-clouds-029", "name": "Clouds 029", "filename": "clouds_029.gif", "category": "Doğa & Ambient"}, {"id": "gif-clouds-031", "name": "Clouds 031", "filename": "clouds_031.gif", "category": "Doğa & Ambient"}, {"id": "gif-code", "name": "Code", "filename": "code.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-code-ide-001", "name": "Code IDE 001", "filename": "code_ide_001.gif", "category": "Developer & Kodlama"}, {"id": "gif-code-ide-003", "name": "Code IDE 003", "filename": "code_ide_003.gif", "category": "Developer & Kodlama"}, {"id": "gif-code-ide-006", "name": "Code IDE 006", "filename": "code_ide_006.gif", "category": "Developer & Kodlama"}, {"id": "gif-code-ide-008", "name": "Code IDE 008", "filename": "code_ide_008.gif", "category": "Developer & Kodlama"}, {"id": "gif-code-ide-014", "name": "Code IDE 014", "filename": "code_ide_014.gif", "category": "Developer & Kodlama"}, {"id": "gif-code-ide-016", "name": "Code IDE 016", "filename": "code_ide_016.gif", "category": "Developer & Kodlama"}, {"id": "gif-code-ide-017", "name": "Code IDE 017", "filename": "code_ide_017.gif", "category": "Developer & Kodlama"}, {"id": "gif-code-ide-021", "name": "Code IDE 021", "filename": "code_ide_021.gif", "category": "Developer & Kodlama"}, {"id": "gif-code-ide-023", "name": "Code IDE 023", "filename": "code_ide_023.gif", "category": "Developer & Kodlama"}, {"id": "gif-code-ide-024", "name": "Code IDE 024", "filename": "code_ide_024.gif", "category": "Developer & Kodlama"}, {"id": "gif-code-ide-027", "name": "Code IDE 027", "filename": "code_ide_027.gif", "category": "Developer & Kodlama"}, {"id": "gif-code-ide-028", "name": "Code IDE 028", "filename": "code_ide_028.gif", "category": "Developer & Kodlama"}, {"id": "gif-code-ide-032", "name": "Code IDE 032", "filename": "code_ide_032.gif", "category": "Developer & Kodlama"}, {"id": "gif-coin", "name": "Coin", "filename": "coin.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-copy", "name": "Copy", "filename": "copy.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-countdown-slide-029", "name": "Countdown Slide 029", "filename": "countdown_slide_029.gif", "category": "Developer & Kodlama"}, {"id": "gif-crown", "name": "Crown", "filename": "crown.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-diamond", "name": "Diamond", "filename": "diamond.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-discord", "name": "Discord", "filename": "discord.gif", "category": "Sosyal Medya & Markalar"}, {"id": "gif-download", "name": "Download", "filename": "download.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-dvd-025", "name": "DVD 025", "filename": "dvd_025.gif", "category": "Retro Gaming & Klasikler"}, {"id": "gif-dvd-026", "name": "DVD 026", "filename": "dvd_026.gif", "category": "Retro Gaming & Klasikler"}, {"id": "gif-ekg-007", "name": "EKG 007", "filename": "ekg_007.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-equalizer", "name": "Equalizer", "filename": "equalizer.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-eye-off", "name": "Eye (Kapalı)", "filename": "eye_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-eye-on", "name": "Eye (Açık)", "filename": "eye_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-fire", "name": "Fire", "filename": "fire.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-fluorescent-000", "name": "Fluorescent 000", "filename": "fluorescent_000.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-folder", "name": "Folder", "filename": "folder.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-game-dice-007", "name": "Game Dice 007", "filename": "game_dice_007.gif", "category": "Retro Gaming & Klasikler"}, {"id": "gif-gamepad", "name": "Gamepad", "filename": "gamepad.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-gear", "name": "Gear", "filename": "gear.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-ghost", "name": "Ghost", "filename": "ghost.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-gift-surprise-003", "name": "Gift Surprise 003", "filename": "gift_surprise_003.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-gift-surprise-014", "name": "Gift Surprise 014", "filename": "gift_surprise_014.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-gift-surprise-024", "name": "Gift Surprise 024", "filename": "gift_surprise_024.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-gift-surprise-027", "name": "Gift Surprise 027", "filename": "gift_surprise_027.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-gift-surprise-028", "name": "Gift Surprise 028", "filename": "gift_surprise_028.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-glitch-027", "name": "Glitch 027", "filename": "glitch_027.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-globe", "name": "Globe", "filename": "globe.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-grand-theft-auto", "name": "Grand Theft Auto", "filename": "grand_theft_auto.gif", "category": "Retro Gaming & Klasikler"}, {"id": "gif-grid", "name": "Grid", "filename": "grid.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-headphones-off", "name": "Headphones (Kapalı)", "filename": "headphones_off.gif", "category": "Medya & Ses"}, {"id": "gif-headphones-on", "name": "Headphones (Açık)", "filename": "headphones_on.gif", "category": "Medya & Ses"}, {"id": "gif-heart-off", "name": "Heart (Kapalı)", "filename": "heart_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-heart-on", "name": "Heart (Açık)", "filename": "heart_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-home", "name": "Home", "filename": "home.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-hourglass", "name": "Hourglass", "filename": "hourglass.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-instagram", "name": "Instagram", "filename": "instagram.gif", "category": "Sosyal Medya & Markalar"}, {"id": "gif-jellyfish-027", "name": "Jellyfish 027", "filename": "jellyfish_027.gif", "category": "Doğa & Ambient"}, {"id": "gif-key", "name": "Key", "filename": "key.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-keyboard", "name": "Keyboard", "filename": "keyboard.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-link", "name": "Link", "filename": "link.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-live-off", "name": "Live (Kapalı)", "filename": "live_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-live-on", "name": "Live (Açık)", "filename": "live_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-lock-off", "name": "Lock (Kapalı)", "filename": "lock_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-lock-on", "name": "Lock (Açık)", "filename": "lock_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-mail", "name": "Mail", "filename": "mail.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-maze-025", "name": "Maze 025", "filename": "maze_025.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-mic-off", "name": "Mic (Kapalı)", "filename": "mic_off.gif", "category": "Medya & Ses"}, {"id": "gif-mic-on", "name": "Mic (Açık)", "filename": "mic_on.gif", "category": "Medya & Ses"}, {"id": "gif-monitor-off", "name": "Monitor (Kapalı)", "filename": "monitor_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-monitor-on", "name": "Monitor (Açık)", "filename": "monitor_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-moon-off", "name": "Moon (Kapalı)", "filename": "moon_off.gif", "category": "Doğa & Ambient"}, {"id": "gif-moon-on", "name": "Moon (Açık)", "filename": "moon_on.gif", "category": "Doğa & Ambient"}, {"id": "gif-moon-reflection-001", "name": "Moon Reflection 001", "filename": "moon_reflection_001.gif", "category": "Doğa & Ambient"}, {"id": "gif-moon-reflection-003", "name": "Moon Reflection 003", "filename": "moon_reflection_003.gif", "category": "Doğa & Ambient"}, {"id": "gif-moon-reflection-007", "name": "Moon Reflection 007", "filename": "moon_reflection_007.gif", "category": "Doğa & Ambient"}, {"id": "gif-moon-reflection-024", "name": "Moon Reflection 024", "filename": "moon_reflection_024.gif", "category": "Doğa & Ambient"}, {"id": "gif-moon-reflection-027", "name": "Moon Reflection 027", "filename": "moon_reflection_027.gif", "category": "Doğa & Ambient"}, {"id": "gif-moon-reflection-028", "name": "Moon Reflection 028", "filename": "moon_reflection_028.gif", "category": "Doğa & Ambient"}, {"id": "gif-moon-reflection-030", "name": "Moon Reflection 030", "filename": "moon_reflection_030.gif", "category": "Doğa & Ambient"}, {"id": "gif-moon-reflection-032", "name": "Moon Reflection 032", "filename": "moon_reflection_032.gif", "category": "Doğa & Ambient"}, {"id": "gif-mrt-xray-scan-001", "name": "MRT X-Ray Scan 001", "filename": "mrt_xray_scan_001.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-mrt-xray-scan-007", "name": "MRT X-Ray Scan 007", "filename": "mrt_xray_scan_007.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-mrt-xray-scan-011", "name": "MRT X-Ray Scan 011", "filename": "mrt_xray_scan_011.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-mrt-xray-scan-014", "name": "MRT X-Ray Scan 014", "filename": "mrt_xray_scan_014.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-mrt-xray-scan-016", "name": "MRT X-Ray Scan 016", "filename": "mrt_xray_scan_016.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-mrt-xray-scan-027", "name": "MRT X-Ray Scan 027", "filename": "mrt_xray_scan_027.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-mrt-xray-scan-028", "name": "MRT X-Ray Scan 028", "filename": "mrt_xray_scan_028.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-music", "name": "Music", "filename": "music.gif", "category": "Medya & Ses"}, {"id": "gif-next", "name": "Next", "filename": "next.gif", "category": "Medya & Ses"}, {"id": "gif-palm-avenue-052", "name": "Palm Avenue 052", "filename": "palm_avenue_052.gif", "category": "Doğa & Ambient"}, {"id": "gif-particle-tunnel-001", "name": "Particle Tunnel 001", "filename": "particle_tunnel_001.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-particle-tunnel-007", "name": "Particle Tunnel 007", "filename": "particle_tunnel_007.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-particle-tunnel-008", "name": "Particle Tunnel 008", "filename": "particle_tunnel_008.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-particle-tunnel-012", "name": "Particle Tunnel 012", "filename": "particle_tunnel_012.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-particle-tunnel-014", "name": "Particle Tunnel 014", "filename": "particle_tunnel_014.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-particle-tunnel-024", "name": "Particle Tunnel 024", "filename": "particle_tunnel_024.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-particle-tunnel-026", "name": "Particle Tunnel 026", "filename": "particle_tunnel_026.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-particle-tunnel-027", "name": "Particle Tunnel 027", "filename": "particle_tunnel_027.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-particle-tunnel-028", "name": "Particle Tunnel 028", "filename": "particle_tunnel_028.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-particle-tunnel-032", "name": "Particle Tunnel 032", "filename": "particle_tunnel_032.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-pause", "name": "Pause", "filename": "pause.gif", "category": "Medya & Ses"}, {"id": "gif-pin", "name": "Pin", "filename": "pin.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-play", "name": "Play", "filename": "play.gif", "category": "Medya & Ses"}, {"id": "gif-power-off", "name": "Power (Kapalı)", "filename": "power_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-power-on", "name": "Power (Açık)", "filename": "power_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-prev", "name": "Prev", "filename": "prev.gif", "category": "Medya & Ses"}, {"id": "gif-radioactive-026", "name": "Radioactive 026", "filename": "radioactive_026.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-rain", "name": "Rain", "filename": "rain.gif", "category": "Doğa & Ambient"}, {"id": "gif-record-off", "name": "Record (Kapalı)", "filename": "record_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-record-on", "name": "Record (Açık)", "filename": "record_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-refresh", "name": "Refresh", "filename": "refresh.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-repeat-off", "name": "Repeat (Kapalı)", "filename": "repeat_off.gif", "category": "Medya & Ses"}, {"id": "gif-repeat-on", "name": "Repeat (Açık)", "filename": "repeat_on.gif", "category": "Medya & Ses"}, {"id": "gif-rocket", "name": "Rocket", "filename": "rocket.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-sandstorm-017", "name": "Sandstorm 017", "filename": "sandstorm_017.gif", "category": "Doğa & Ambient"}, {"id": "gif-sandstorm-025", "name": "Sandstorm 025", "filename": "sandstorm_025.gif", "category": "Doğa & Ambient"}, {"id": "gif-sandstorm-026", "name": "Sandstorm 026", "filename": "sandstorm_026.gif", "category": "Doğa & Ambient"}, {"id": "gif-sandstorm-027", "name": "Sandstorm 027", "filename": "sandstorm_027.gif", "category": "Doğa & Ambient"}, {"id": "gif-sandstorm-028", "name": "Sandstorm 028", "filename": "sandstorm_028.gif", "category": "Doğa & Ambient"}, {"id": "gif-scan-pulse-002", "name": "Scan Pulse 002", "filename": "scan_pulse_002.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-scan-pulse-007", "name": "Scan Pulse 007", "filename": "scan_pulse_007.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-scan-pulse-009", "name": "Scan Pulse 009", "filename": "scan_pulse_009.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-scan-pulse-012", "name": "Scan Pulse 012", "filename": "scan_pulse_012.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-scan-pulse-014", "name": "Scan Pulse 014", "filename": "scan_pulse_014.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-scan-pulse-016", "name": "Scan Pulse 016", "filename": "scan_pulse_016.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-scan-pulse-017", "name": "Scan Pulse 017", "filename": "scan_pulse_017.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-scan-pulse-024", "name": "Scan Pulse 024", "filename": "scan_pulse_024.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-scan-pulse-027", "name": "Scan Pulse 027", "filename": "scan_pulse_027.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-scan-pulse-028", "name": "Scan Pulse 028", "filename": "scan_pulse_028.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-scan-pulse-032", "name": "Scan Pulse 032", "filename": "scan_pulse_032.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-screenshot", "name": "Screenshot", "filename": "screenshot.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-search", "name": "Search", "filename": "search.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-shield", "name": "Shield", "filename": "shield.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-shuffle-off", "name": "Shuffle (Kapalı)", "filename": "shuffle_off.gif", "category": "Medya & Ses"}, {"id": "gif-shuffle-on", "name": "Shuffle (Açık)", "filename": "shuffle_on.gif", "category": "Medya & Ses"}, {"id": "gif-smile", "name": "Smile", "filename": "smile.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-smoke-001", "name": "Smoke 001", "filename": "smoke_001.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-smoke-004", "name": "Smoke 004", "filename": "smoke_004.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-smoke-014", "name": "Smoke 014", "filename": "smoke_014.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-smoke-021", "name": "Smoke 021", "filename": "smoke_021.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-smoke-025", "name": "Smoke 025", "filename": "smoke_025.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-smoke-027", "name": "Smoke 027", "filename": "smoke_027.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-smoke-028", "name": "Smoke 028", "filename": "smoke_028.gif", "category": "Cyber, VFX & Partiküller"}, {"id": "gif-snow-007", "name": "Snow 007", "filename": "snow_007.gif", "category": "Doğa & Ambient"}, {"id": "gif-snowflake", "name": "Snowflake", "filename": "snowflake.gif", "category": "Doğa & Ambient"}, {"id": "gif-spotify", "name": "Spotify", "filename": "spotify.gif", "category": "Sosyal Medya & Markalar"}, {"id": "gif-star-off", "name": "Star (Kapalı)", "filename": "star_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-star-on", "name": "Star (Açık)", "filename": "star_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-sun-off", "name": "Sun (Kapalı)", "filename": "sun_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-sun-on", "name": "Sun (Açık)", "filename": "sun_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-target", "name": "Target", "filename": "target.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-terminal", "name": "Terminal", "filename": "terminal.gif", "category": "Developer & Kodlama"}, {"id": "gif-test-drive-1987", "name": "Test Drive 1987", "filename": "test_drive_1987.gif", "category": "Retro Gaming & Klasikler"}, {"id": "gif-thunder-storm-004", "name": "Thunder Storm 004", "filename": "thunder_storm_004.gif", "category": "Doğa & Ambient"}, {"id": "gif-trash", "name": "Trash", "filename": "trash.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-trophy", "name": "Trophy", "filename": "trophy.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-twitch", "name": "Twitch", "filename": "twitch.gif", "category": "Sosyal Medya & Markalar"}, {"id": "gif-upload", "name": "Upload", "filename": "upload.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-volume-down", "name": "Volume Down", "filename": "volume_down.gif", "category": "Medya & Ses"}, {"id": "gif-volume-off", "name": "Volume (Kapalı)", "filename": "volume_off.gif", "category": "Medya & Ses"}, {"id": "gif-volume-on", "name": "Volume (Açık)", "filename": "volume_on.gif", "category": "Medya & Ses"}, {"id": "gif-volume-up", "name": "Volume Up", "filename": "volume_up.gif", "category": "Medya & Ses"}, {"id": "gif-wand", "name": "Wand (Sihirli Değnek)", "filename": "wand.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-wifi-off", "name": "Wifi (Kapalı)", "filename": "wifi_off.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-wifi-on", "name": "Wifi (Açık)", "filename": "wifi_on.gif", "category": "Neon Kontroller & UI"}, {"id": "gif-window-rain-007", "name": "Window Rain 007", "filename": "window_rain_007.gif", "category": "Doğa & Ambient"}, {"id": "gif-x", "name": "X", "filename": "x.gif", "category": "Sosyal Medya & Markalar"}, {"id": "gif-xenon-027", "name": "Xenon 027 (Mor / Klasik)", "filename": "xenon_027.gif", "category": "Xenon Serisi"}, {"id": "gif-xenon-027-amber", "name": "Xenon 027 (Kehribar / Altın Ateş)", "filename": "xenon_027_amber.gif", "category": "Xenon Serisi"}, {"id": "gif-xenon-027-blue", "name": "Xenon 027 (Elektrik Mavisi)", "filename": "xenon_027_blue.gif", "category": "Xenon Serisi"}, {"id": "gif-xenon-027-crimson", "name": "Xenon 027 (Yakut Kırmızısı)", "filename": "xenon_027_crimson.gif", "category": "Xenon Serisi"}, {"id": "gif-xenon-027-cyan", "name": "Xenon 027 (Cyan / Buz Mavisi)", "filename": "xenon_027_cyan.gif", "category": "Xenon Serisi"}, {"id": "gif-xenon-027-emerald", "name": "Xenon 027 (Zümrüt Yeşili)", "filename": "xenon_027_emerald.gif", "category": "Xenon Serisi"}, {"id": "gif-xenon-027-rose", "name": "Xenon 027 (Kozmik Pembe / Gül)", "filename": "xenon_027_rose.gif", "category": "Xenon Serisi"}, {"id": "gif-youtube", "name": "Youtube", "filename": "youtube.gif", "category": "Sosyal Medya & Markalar"}];
+    
+    let activeSlotIndex = 0;
+
+    function resolveImg(imgEl, filename) {
+      imgEl.onerror = function() {
+        if (!this.dataset.tried) {
+          this.dataset.tried = "1";
+          this.src = "icons/" + filename;
+        } else if (this.dataset.tried === "1") {
+          this.dataset.tried = "2";
+          this.src = "icons/" + filename;
+        } else if (this.dataset.tried === "2") {
+          this.dataset.tried = "3";
+          this.src = "../icons/" + filename;
+        }
+      };
+      imgEl.src = "icons/" + filename;
+    }
+
+    function showToast(text) {
+      const toast = document.getElementById('hintToast');
+      const toastText = document.getElementById('hintText');
+      toastText.textContent = text;
+      toast.style.display = 'flex';
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => {
+        toast.style.display = 'none';
+      }, 2200);
+    }
+
+    const deckGrid = document.getElementById('deckGrid');
+    
+    function initDeck(keys) {
+      deckGrid.innerHTML = '';
+      keys.forEach((k, idx) => {
+        const div = document.createElement('div');
+        div.className = 'deck-key' + (idx === activeSlotIndex ? ' active-slot' : '');
+        div.dataset.slot = idx;
+        
+        const slotNum = document.createElement('span');
+        slotNum.className = 'slot-num';
+        slotNum.textContent = (idx + 1);
+        div.appendChild(slotNum);
+        
+        const img = document.createElement('img');
+        img.alt = 'Key ' + (idx + 1);
+        resolveImg(img, k);
+        div.appendChild(img);
+        
+        div.onclick = () => {
+          document.querySelectorAll('.deck-key').forEach(k => k.classList.remove('active-slot'));
+          div.classList.add('active-slot');
+          activeSlotIndex = idx;
+          showToast(`Tuş #${idx + 1} seçildi. Galeriden bir ikona tıklayın.`);
+        };
+        
+        deckGrid.appendChild(div);
+      });
+    }
+    
+    initDeck(INITIAL_KEYS);
+
+    const galleryGrid = document.getElementById('galleryGrid');
+    const galleryTitle = document.getElementById('galleryTitle');
+    const galleryCount = document.getElementById('galleryCount');
+    
+    function renderGallery(items) {
+      galleryGrid.innerHTML = '';
+      galleryCount.textContent = `${items.length} İkon Gösteriliyor`;
+      
+      items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'icon-card';
+        card.title = `${item.name} — Tıkla ve Stream Deck #${activeSlotIndex + 1} tuşuna yerleştir`;
+        
+        const imgWrap = document.createElement('div');
+        imgWrap.className = 'img-wrap';
+        
+        const img = document.createElement('img');
+        img.alt = item.name;
+        img.loading = "lazy";
+        resolveImg(img, item.filename);
+        imgWrap.appendChild(img);
+
+        const info = document.createElement('div');
+        info.className = 'icon-info';
+
+        const nameDiv = document.createElement('div');
+        nameDiv.className = 'icon-name';
+        nameDiv.textContent = item.name;
+
+        const catDiv = document.createElement('div');
+        catDiv.className = 'icon-category';
+        catDiv.textContent = item.category;
+
+        info.appendChild(nameDiv);
+        info.appendChild(catDiv);
+
+        card.appendChild(imgWrap);
+        card.appendChild(info);
+
+        card.onclick = () => {
+          const allKeys = deckGrid.querySelectorAll('.deck-key');
+          const targetKey = allKeys[activeSlotIndex] || allKeys[0];
+          if (targetKey) {
+            const keyImg = targetKey.querySelector('img');
+            resolveImg(keyImg, item.filename);
+            
+            targetKey.style.transform = 'scale(1.15)';
+            setTimeout(() => {
+              targetKey.style.transform = '';
+            }, 200);
+            
+            showToast(`[Tuş #${activeSlotIndex + 1}] "${item.name}" yerleştirildi!`);
+            
+            allKeys.forEach(k => k.classList.remove('active-slot'));
+            activeSlotIndex = (activeSlotIndex + 1) % 15;
+            allKeys[activeSlotIndex].classList.add('active-slot');
+          }
+        };
+        
+        galleryGrid.appendChild(card);
+      });
+    }
+    
+    renderGallery(ASSETS);
+
+    const searchInput = document.getElementById('searchInput');
+    searchInput.oninput = (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      const filtered = ASSETS.filter(a => a.name.toLowerCase().includes(q) || a.category.toLowerCase().includes(q) || a.filename.toLowerCase().includes(q));
+      renderGallery(filtered);
+      if (q) {
+        galleryTitle.textContent = `Arama Sonuçları: "${q}"`;
+      } else {
+        galleryTitle.textContent = "Tüm İkonlar";
+      }
+    };
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        searchInput.value = '';
+        const f = btn.dataset.filter;
+        if (f === 'all') {
+          galleryTitle.textContent = "Tüm İkonlar";
+          renderGallery(ASSETS);
+        } else {
+          galleryTitle.textContent = f;
+          renderGallery(ASSETS.filter(a => a.category === f));
+        }
+      };
+    });
+
+    document.getElementById('btnResetDeck').onclick = () => {
+      activeSlotIndex = 0;
+      initDeck(INITIAL_KEYS);
+      showToast("Stream Deck varsayılan düzene sıfırlandı.");
+    };
+
+    document.getElementById('btnRandomFill').onclick = () => {
+      const shuffled = [...ASSETS].sort(() => 0.5 - Math.random());
+      const random15 = shuffled.slice(0, 15).map(a => a.filename);
+      activeSlotIndex = 0;
+      initDeck(random15);
+      showToast("🎲 15 tuş rastgele GIF ikonlarla dolduruldu!");
+    };
+  </script>
+</body>
+</html>

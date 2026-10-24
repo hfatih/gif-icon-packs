@@ -1,0 +1,1155 @@
+{
+  "schemaVersion": 1,
+  "packageType": "icon_pack",
+  "name": "Gif Icon Packs",
+  "description": "evoX ve Stream Deck cihazları için 226 adet yüksek kaliteli benzersiz hareketli GIF ikon ve LCD arka plan paketi (Wand Sihirli Değnek Teması, Neon Pulse serisi, GTA, Alien UFO, Particle Tunnels, Code IDE, Ambient, Scanner Pulse ve Çok Renkli Xenon serisi).",
+  "version": "1.0.0",
+  "author": {
+    "id": "hfatih",
+    "name": "Fatih Han",
+    "url": "https://github.com/Hfatih"
+  },
+  "homepage": "https://github.com/Hfatih",
+  "repository": "https://github.com/Hfatih",
+  "license": "MIT",
+  "requiredActions": [],
+  "requiredIntegrations": [],
+  "coverImage": "cover.png",
+  "createdWith": "evox-deck-v2",
+  "createdAt": "2026-10-24T02:50:38.000Z",
+  "assets": {
+    "icons": [
+      {
+        "id": "gif-airplane-off",
+        "name": "Airplane (Kapalı)",
+        "path": "assets/icons/airplane_off.gif"
+      },
+      {
+        "id": "gif-airplane-on",
+        "name": "Airplane (Açık)",
+        "path": "assets/icons/airplane_on.gif"
+      },
+      {
+        "id": "gif-alien-ufo-akte-x-i-want-to-believe",
+        "name": "Alien UFO Akte X I Want To Believe",
+        "path": "assets/icons/alien_ufo_akte_x_i_want_to_believe.gif"
+      },
+      {
+        "id": "gif-aquarium-000",
+        "name": "Aquarium 000",
+        "path": "assets/icons/aquarium_000.gif"
+      },
+      {
+        "id": "gif-balls-000",
+        "name": "Balls 000",
+        "path": "assets/icons/balls_000.gif"
+      },
+      {
+        "id": "gif-battery",
+        "name": "Battery",
+        "path": "assets/icons/battery.gif"
+      },
+      {
+        "id": "gif-bell-off",
+        "name": "Bell (Kapalı)",
+        "path": "assets/icons/bell_off.gif"
+      },
+      {
+        "id": "gif-bell-on",
+        "name": "Bell (Açık)",
+        "path": "assets/icons/bell_on.gif"
+      },
+      {
+        "id": "gif-biohazard-028",
+        "name": "Biohazard 028",
+        "path": "assets/icons/biohazard_028.gif"
+      },
+      {
+        "id": "gif-bluetooth-off",
+        "name": "Bluetooth (Kapalı)",
+        "path": "assets/icons/bluetooth_off.gif"
+      },
+      {
+        "id": "gif-bluetooth-on",
+        "name": "Bluetooth (Açık)",
+        "path": "assets/icons/bluetooth_on.gif"
+      },
+      {
+        "id": "gif-bolt",
+        "name": "Bolt",
+        "path": "assets/icons/bolt.gif"
+      },
+      {
+        "id": "gif-bookmark",
+        "name": "Bookmark",
+        "path": "assets/icons/bookmark.gif"
+      },
+      {
+        "id": "gif-bulb-off",
+        "name": "Bulb (Kapalı)",
+        "path": "assets/icons/bulb_off.gif"
+      },
+      {
+        "id": "gif-bulb-on",
+        "name": "Bulb (Açık)",
+        "path": "assets/icons/bulb_on.gif"
+      },
+      {
+        "id": "gif-calendar",
+        "name": "Calendar",
+        "path": "assets/icons/calendar.gif"
+      },
+      {
+        "id": "gif-camera-off",
+        "name": "Camera (Kapalı)",
+        "path": "assets/icons/camera_off.gif"
+      },
+      {
+        "id": "gif-camera-on",
+        "name": "Camera (Açık)",
+        "path": "assets/icons/camera_on.gif"
+      },
+      {
+        "id": "gif-chart",
+        "name": "Chart",
+        "path": "assets/icons/chart.gif"
+      },
+      {
+        "id": "gif-chat-001",
+        "name": "Chat 001",
+        "path": "assets/icons/chat_001.gif"
+      },
+      {
+        "id": "gif-chat-002",
+        "name": "Chat 002",
+        "path": "assets/icons/chat_002.gif"
+      },
+      {
+        "id": "gif-chat-003",
+        "name": "Chat 003",
+        "path": "assets/icons/chat_003.gif"
+      },
+      {
+        "id": "gif-chat-004",
+        "name": "Chat 004",
+        "path": "assets/icons/chat_004.gif"
+      },
+      {
+        "id": "gif-chat-005",
+        "name": "Chat 005",
+        "path": "assets/icons/chat_005.gif"
+      },
+      {
+        "id": "gif-chat-007",
+        "name": "Chat 007",
+        "path": "assets/icons/chat_007.gif"
+      },
+      {
+        "id": "gif-chat-008",
+        "name": "Chat 008",
+        "path": "assets/icons/chat_008.gif"
+      },
+      {
+        "id": "gif-chat-009",
+        "name": "Chat 009",
+        "path": "assets/icons/chat_009.gif"
+      },
+      {
+        "id": "gif-chat-010",
+        "name": "Chat 010",
+        "path": "assets/icons/chat_010.gif"
+      },
+      {
+        "id": "gif-chat-011",
+        "name": "Chat 011",
+        "path": "assets/icons/chat_011.gif"
+      },
+      {
+        "id": "gif-chat-012",
+        "name": "Chat 012",
+        "path": "assets/icons/chat_012.gif"
+      },
+      {
+        "id": "gif-chat-013",
+        "name": "Chat 013",
+        "path": "assets/icons/chat_013.gif"
+      },
+      {
+        "id": "gif-chat-014",
+        "name": "Chat 014",
+        "path": "assets/icons/chat_014.gif"
+      },
+      {
+        "id": "gif-chat-015",
+        "name": "Chat 015",
+        "path": "assets/icons/chat_015.gif"
+      },
+      {
+        "id": "gif-chat-016",
+        "name": "Chat 016",
+        "path": "assets/icons/chat_016.gif"
+      },
+      {
+        "id": "gif-chat-017",
+        "name": "Chat 017",
+        "path": "assets/icons/chat_017.gif"
+      },
+      {
+        "id": "gif-chat-018",
+        "name": "Chat 018",
+        "path": "assets/icons/chat_018.gif"
+      },
+      {
+        "id": "gif-chat-019",
+        "name": "Chat 019",
+        "path": "assets/icons/chat_019.gif"
+      },
+      {
+        "id": "gif-chat-020",
+        "name": "Chat 020",
+        "path": "assets/icons/chat_020.gif"
+      },
+      {
+        "id": "gif-chat-022",
+        "name": "Chat 022",
+        "path": "assets/icons/chat_022.gif"
+      },
+      {
+        "id": "gif-chat-023",
+        "name": "Chat 023",
+        "path": "assets/icons/chat_023.gif"
+      },
+      {
+        "id": "gif-chat-024",
+        "name": "Chat 024",
+        "path": "assets/icons/chat_024.gif"
+      },
+      {
+        "id": "gif-chat-025",
+        "name": "Chat 025",
+        "path": "assets/icons/chat_025.gif"
+      },
+      {
+        "id": "gif-chat-026",
+        "name": "Chat 026",
+        "path": "assets/icons/chat_026.gif"
+      },
+      {
+        "id": "gif-chat-027",
+        "name": "Chat 027",
+        "path": "assets/icons/chat_027.gif"
+      },
+      {
+        "id": "gif-chat-028",
+        "name": "Chat 028",
+        "path": "assets/icons/chat_028.gif"
+      },
+      {
+        "id": "gif-chat-029",
+        "name": "Chat 029",
+        "path": "assets/icons/chat_029.gif"
+      },
+      {
+        "id": "gif-chat-031",
+        "name": "Chat 031",
+        "path": "assets/icons/chat_031.gif"
+      },
+      {
+        "id": "gif-chat-032",
+        "name": "Chat 032",
+        "path": "assets/icons/chat_032.gif"
+      },
+      {
+        "id": "gif-chat-off",
+        "name": "Chat (Kapalı)",
+        "path": "assets/icons/chat_off.gif"
+      },
+      {
+        "id": "gif-chat-on",
+        "name": "Chat (Açık)",
+        "path": "assets/icons/chat_on.gif"
+      },
+      {
+        "id": "gif-clapper",
+        "name": "Clapper",
+        "path": "assets/icons/clapper.gif"
+      },
+      {
+        "id": "gif-clock",
+        "name": "Clock",
+        "path": "assets/icons/clock.gif"
+      },
+      {
+        "id": "gif-cloud",
+        "name": "Cloud",
+        "path": "assets/icons/cloud.gif"
+      },
+      {
+        "id": "gif-clouds-016",
+        "name": "Clouds 016",
+        "path": "assets/icons/clouds_016.gif"
+      },
+      {
+        "id": "gif-clouds-019",
+        "name": "Clouds 019",
+        "path": "assets/icons/clouds_019.gif"
+      },
+      {
+        "id": "gif-clouds-029",
+        "name": "Clouds 029",
+        "path": "assets/icons/clouds_029.gif"
+      },
+      {
+        "id": "gif-clouds-031",
+        "name": "Clouds 031",
+        "path": "assets/icons/clouds_031.gif"
+      },
+      {
+        "id": "gif-code",
+        "name": "Code",
+        "path": "assets/icons/code.gif"
+      },
+      {
+        "id": "gif-code-ide-001",
+        "name": "Code IDE 001",
+        "path": "assets/icons/code_ide_001.gif"
+      },
+      {
+        "id": "gif-code-ide-003",
+        "name": "Code IDE 003",
+        "path": "assets/icons/code_ide_003.gif"
+      },
+      {
+        "id": "gif-code-ide-006",
+        "name": "Code IDE 006",
+        "path": "assets/icons/code_ide_006.gif"
+      },
+      {
+        "id": "gif-code-ide-008",
+        "name": "Code IDE 008",
+        "path": "assets/icons/code_ide_008.gif"
+      },
+      {
+        "id": "gif-code-ide-014",
+        "name": "Code IDE 014",
+        "path": "assets/icons/code_ide_014.gif"
+      },
+      {
+        "id": "gif-code-ide-016",
+        "name": "Code IDE 016",
+        "path": "assets/icons/code_ide_016.gif"
+      },
+      {
+        "id": "gif-code-ide-017",
+        "name": "Code IDE 017",
+        "path": "assets/icons/code_ide_017.gif"
+      },
+      {
+        "id": "gif-code-ide-021",
+        "name": "Code IDE 021",
+        "path": "assets/icons/code_ide_021.gif"
+      },
+      {
+        "id": "gif-code-ide-023",
+        "name": "Code IDE 023",
+        "path": "assets/icons/code_ide_023.gif"
+      },
+      {
+        "id": "gif-code-ide-024",
+        "name": "Code IDE 024",
+        "path": "assets/icons/code_ide_024.gif"
+      },
+      {
+        "id": "gif-code-ide-027",
+        "name": "Code IDE 027",
+        "path": "assets/icons/code_ide_027.gif"
+      },
+      {
+        "id": "gif-code-ide-028",
+        "name": "Code IDE 028",
+        "path": "assets/icons/code_ide_028.gif"
+      },
+      {
+        "id": "gif-code-ide-032",
+        "name": "Code IDE 032",
+        "path": "assets/icons/code_ide_032.gif"
+      },
+      {
+        "id": "gif-coin",
+        "name": "Coin",
+        "path": "assets/icons/coin.gif"
+      },
+      {
+        "id": "gif-copy",
+        "name": "Copy",
+        "path": "assets/icons/copy.gif"
+      },
+      {
+        "id": "gif-countdown-slide-029",
+        "name": "Countdown Slide 029",
+        "path": "assets/icons/countdown_slide_029.gif"
+      },
+      {
+        "id": "gif-crown",
+        "name": "Crown",
+        "path": "assets/icons/crown.gif"
+      },
+      {
+        "id": "gif-diamond",
+        "name": "Diamond",
+        "path": "assets/icons/diamond.gif"
+      },
+      {
+        "id": "gif-discord",
+        "name": "Discord",
+        "path": "assets/icons/discord.gif"
+      },
+      {
+        "id": "gif-download",
+        "name": "Download",
+        "path": "assets/icons/download.gif"
+      },
+      {
+        "id": "gif-dvd-025",
+        "name": "DVD 025",
+        "path": "assets/icons/dvd_025.gif"
+      },
+      {
+        "id": "gif-dvd-026",
+        "name": "DVD 026",
+        "path": "assets/icons/dvd_026.gif"
+      },
+      {
+        "id": "gif-ekg-007",
+        "name": "EKG 007",
+        "path": "assets/icons/ekg_007.gif"
+      },
+      {
+        "id": "gif-equalizer",
+        "name": "Equalizer",
+        "path": "assets/icons/equalizer.gif"
+      },
+      {
+        "id": "gif-eye-off",
+        "name": "Eye (Kapalı)",
+        "path": "assets/icons/eye_off.gif"
+      },
+      {
+        "id": "gif-eye-on",
+        "name": "Eye (Açık)",
+        "path": "assets/icons/eye_on.gif"
+      },
+      {
+        "id": "gif-fire",
+        "name": "Fire",
+        "path": "assets/icons/fire.gif"
+      },
+      {
+        "id": "gif-fluorescent-000",
+        "name": "Fluorescent 000",
+        "path": "assets/icons/fluorescent_000.gif"
+      },
+      {
+        "id": "gif-folder",
+        "name": "Folder",
+        "path": "assets/icons/folder.gif"
+      },
+      {
+        "id": "gif-game-dice-007",
+        "name": "Game Dice 007",
+        "path": "assets/icons/game_dice_007.gif"
+      },
+      {
+        "id": "gif-gamepad",
+        "name": "Gamepad",
+        "path": "assets/icons/gamepad.gif"
+      },
+      {
+        "id": "gif-gear",
+        "name": "Gear",
+        "path": "assets/icons/gear.gif"
+      },
+      {
+        "id": "gif-ghost",
+        "name": "Ghost",
+        "path": "assets/icons/ghost.gif"
+      },
+      {
+        "id": "gif-gift-surprise-003",
+        "name": "Gift Surprise 003",
+        "path": "assets/icons/gift_surprise_003.gif"
+      },
+      {
+        "id": "gif-gift-surprise-014",
+        "name": "Gift Surprise 014",
+        "path": "assets/icons/gift_surprise_014.gif"
+      },
+      {
+        "id": "gif-gift-surprise-024",
+        "name": "Gift Surprise 024",
+        "path": "assets/icons/gift_surprise_024.gif"
+      },
+      {
+        "id": "gif-gift-surprise-027",
+        "name": "Gift Surprise 027",
+        "path": "assets/icons/gift_surprise_027.gif"
+      },
+      {
+        "id": "gif-gift-surprise-028",
+        "name": "Gift Surprise 028",
+        "path": "assets/icons/gift_surprise_028.gif"
+      },
+      {
+        "id": "gif-glitch-027",
+        "name": "Glitch 027",
+        "path": "assets/icons/glitch_027.gif"
+      },
+      {
+        "id": "gif-globe",
+        "name": "Globe",
+        "path": "assets/icons/globe.gif"
+      },
+      {
+        "id": "gif-grand-theft-auto",
+        "name": "Grand Theft Auto",
+        "path": "assets/icons/grand_theft_auto.gif"
+      },
+      {
+        "id": "gif-grid",
+        "name": "Grid",
+        "path": "assets/icons/grid.gif"
+      },
+      {
+        "id": "gif-headphones-off",
+        "name": "Headphones (Kapalı)",
+        "path": "assets/icons/headphones_off.gif"
+      },
+      {
+        "id": "gif-headphones-on",
+        "name": "Headphones (Açık)",
+        "path": "assets/icons/headphones_on.gif"
+      },
+      {
+        "id": "gif-heart-off",
+        "name": "Heart (Kapalı)",
+        "path": "assets/icons/heart_off.gif"
+      },
+      {
+        "id": "gif-heart-on",
+        "name": "Heart (Açık)",
+        "path": "assets/icons/heart_on.gif"
+      },
+      {
+        "id": "gif-home",
+        "name": "Home",
+        "path": "assets/icons/home.gif"
+      },
+      {
+        "id": "gif-hourglass",
+        "name": "Hourglass",
+        "path": "assets/icons/hourglass.gif"
+      },
+      {
+        "id": "gif-instagram",
+        "name": "Instagram",
+        "path": "assets/icons/instagram.gif"
+      },
+      {
+        "id": "gif-jellyfish-027",
+        "name": "Jellyfish 027",
+        "path": "assets/icons/jellyfish_027.gif"
+      },
+      {
+        "id": "gif-key",
+        "name": "Key",
+        "path": "assets/icons/key.gif"
+      },
+      {
+        "id": "gif-keyboard",
+        "name": "Keyboard",
+        "path": "assets/icons/keyboard.gif"
+      },
+      {
+        "id": "gif-link",
+        "name": "Link",
+        "path": "assets/icons/link.gif"
+      },
+      {
+        "id": "gif-live-off",
+        "name": "Live (Kapalı)",
+        "path": "assets/icons/live_off.gif"
+      },
+      {
+        "id": "gif-live-on",
+        "name": "Live (Açık)",
+        "path": "assets/icons/live_on.gif"
+      },
+      {
+        "id": "gif-lock-off",
+        "name": "Lock (Kapalı)",
+        "path": "assets/icons/lock_off.gif"
+      },
+      {
+        "id": "gif-lock-on",
+        "name": "Lock (Açık)",
+        "path": "assets/icons/lock_on.gif"
+      },
+      {
+        "id": "gif-mail",
+        "name": "Mail",
+        "path": "assets/icons/mail.gif"
+      },
+      {
+        "id": "gif-maze-025",
+        "name": "Maze 025",
+        "path": "assets/icons/maze_025.gif"
+      },
+      {
+        "id": "gif-mic-off",
+        "name": "Mic (Kapalı)",
+        "path": "assets/icons/mic_off.gif"
+      },
+      {
+        "id": "gif-mic-on",
+        "name": "Mic (Açık)",
+        "path": "assets/icons/mic_on.gif"
+      },
+      {
+        "id": "gif-monitor-off",
+        "name": "Monitor (Kapalı)",
+        "path": "assets/icons/monitor_off.gif"
+      },
+      {
+        "id": "gif-monitor-on",
+        "name": "Monitor (Açık)",
+        "path": "assets/icons/monitor_on.gif"
+      },
+      {
+        "id": "gif-moon-off",
+        "name": "Moon (Kapalı)",
+        "path": "assets/icons/moon_off.gif"
+      },
+      {
+        "id": "gif-moon-on",
+        "name": "Moon (Açık)",
+        "path": "assets/icons/moon_on.gif"
+      },
+      {
+        "id": "gif-moon-reflection-001",
+        "name": "Moon Reflection 001",
+        "path": "assets/icons/moon_reflection_001.gif"
+      },
+      {
+        "id": "gif-moon-reflection-003",
+        "name": "Moon Reflection 003",
+        "path": "assets/icons/moon_reflection_003.gif"
+      },
+      {
+        "id": "gif-moon-reflection-007",
+        "name": "Moon Reflection 007",
+        "path": "assets/icons/moon_reflection_007.gif"
+      },
+      {
+        "id": "gif-moon-reflection-024",
+        "name": "Moon Reflection 024",
+        "path": "assets/icons/moon_reflection_024.gif"
+      },
+      {
+        "id": "gif-moon-reflection-027",
+        "name": "Moon Reflection 027",
+        "path": "assets/icons/moon_reflection_027.gif"
+      },
+      {
+        "id": "gif-moon-reflection-028",
+        "name": "Moon Reflection 028",
+        "path": "assets/icons/moon_reflection_028.gif"
+      },
+      {
+        "id": "gif-moon-reflection-030",
+        "name": "Moon Reflection 030",
+        "path": "assets/icons/moon_reflection_030.gif"
+      },
+      {
+        "id": "gif-moon-reflection-032",
+        "name": "Moon Reflection 032",
+        "path": "assets/icons/moon_reflection_032.gif"
+      },
+      {
+        "id": "gif-mrt-xray-scan-001",
+        "name": "MRT X-Ray Scan 001",
+        "path": "assets/icons/mrt_xray_scan_001.gif"
+      },
+      {
+        "id": "gif-mrt-xray-scan-007",
+        "name": "MRT X-Ray Scan 007",
+        "path": "assets/icons/mrt_xray_scan_007.gif"
+      },
+      {
+        "id": "gif-mrt-xray-scan-011",
+        "name": "MRT X-Ray Scan 011",
+        "path": "assets/icons/mrt_xray_scan_011.gif"
+      },
+      {
+        "id": "gif-mrt-xray-scan-014",
+        "name": "MRT X-Ray Scan 014",
+        "path": "assets/icons/mrt_xray_scan_014.gif"
+      },
+      {
+        "id": "gif-mrt-xray-scan-016",
+        "name": "MRT X-Ray Scan 016",
+        "path": "assets/icons/mrt_xray_scan_016.gif"
+      },
+      {
+        "id": "gif-mrt-xray-scan-027",
+        "name": "MRT X-Ray Scan 027",
+        "path": "assets/icons/mrt_xray_scan_027.gif"
+      },
+      {
+        "id": "gif-mrt-xray-scan-028",
+        "name": "MRT X-Ray Scan 028",
+        "path": "assets/icons/mrt_xray_scan_028.gif"
+      },
+      {
+        "id": "gif-music",
+        "name": "Music",
+        "path": "assets/icons/music.gif"
+      },
+      {
+        "id": "gif-next",
+        "name": "Next",
+        "path": "assets/icons/next.gif"
+      },
+      {
+        "id": "gif-palm-avenue-052",
+        "name": "Palm Avenue 052",
+        "path": "assets/icons/palm_avenue_052.gif"
+      },
+      {
+        "id": "gif-particle-tunnel-001",
+        "name": "Particle Tunnel 001",
+        "path": "assets/icons/particle_tunnel_001.gif"
+      },
+      {
+        "id": "gif-particle-tunnel-007",
+        "name": "Particle Tunnel 007",
+        "path": "assets/icons/particle_tunnel_007.gif"
+      },
+      {
+        "id": "gif-particle-tunnel-008",
+        "name": "Particle Tunnel 008",
+        "path": "assets/icons/particle_tunnel_008.gif"
+      },
+      {
+        "id": "gif-particle-tunnel-012",
+        "name": "Particle Tunnel 012",
+        "path": "assets/icons/particle_tunnel_012.gif"
+      },
+      {
+        "id": "gif-particle-tunnel-014",
+        "name": "Particle Tunnel 014",
+        "path": "assets/icons/particle_tunnel_014.gif"
+      },
+      {
+        "id": "gif-particle-tunnel-024",
+        "name": "Particle Tunnel 024",
+        "path": "assets/icons/particle_tunnel_024.gif"
+      },
+      {
+        "id": "gif-particle-tunnel-026",
+        "name": "Particle Tunnel 026",
+        "path": "assets/icons/particle_tunnel_026.gif"
+      },
+      {
+        "id": "gif-particle-tunnel-027",
+        "name": "Particle Tunnel 027",
+        "path": "assets/icons/particle_tunnel_027.gif"
+      },
+      {
+        "id": "gif-particle-tunnel-028",
+        "name": "Particle Tunnel 028",
+        "path": "assets/icons/particle_tunnel_028.gif"
+      },
+      {
+        "id": "gif-particle-tunnel-032",
+        "name": "Particle Tunnel 032",
+        "path": "assets/icons/particle_tunnel_032.gif"
+      },
+      {
+        "id": "gif-pause",
+        "name": "Pause",
+        "path": "assets/icons/pause.gif"
+      },
+      {
+        "id": "gif-pin",
+        "name": "Pin",
+        "path": "assets/icons/pin.gif"
+      },
+      {
+        "id": "gif-play",
+        "name": "Play",
+        "path": "assets/icons/play.gif"
+      },
+      {
+        "id": "gif-power-off",
+        "name": "Power (Kapalı)",
+        "path": "assets/icons/power_off.gif"
+      },
+      {
+        "id": "gif-power-on",
+        "name": "Power (Açık)",
+        "path": "assets/icons/power_on.gif"
+      },
+      {
+        "id": "gif-prev",
+        "name": "Prev",
+        "path": "assets/icons/prev.gif"
+      },
+      {
+        "id": "gif-radioactive-026",
+        "name": "Radioactive 026",
+        "path": "assets/icons/radioactive_026.gif"
+      },
+      {
+        "id": "gif-rain",
+        "name": "Rain",
+        "path": "assets/icons/rain.gif"
+      },
+      {
+        "id": "gif-record-off",
+        "name": "Record (Kapalı)",
+        "path": "assets/icons/record_off.gif"
+      },
+      {
+        "id": "gif-record-on",
+        "name": "Record (Açık)",
+        "path": "assets/icons/record_on.gif"
+      },
+      {
+        "id": "gif-refresh",
+        "name": "Refresh",
+        "path": "assets/icons/refresh.gif"
+      },
+      {
+        "id": "gif-repeat-off",
+        "name": "Repeat (Kapalı)",
+        "path": "assets/icons/repeat_off.gif"
+      },
+      {
+        "id": "gif-repeat-on",
+        "name": "Repeat (Açık)",
+        "path": "assets/icons/repeat_on.gif"
+      },
+      {
+        "id": "gif-rocket",
+        "name": "Rocket",
+        "path": "assets/icons/rocket.gif"
+      },
+      {
+        "id": "gif-sandstorm-017",
+        "name": "Sandstorm 017",
+        "path": "assets/icons/sandstorm_017.gif"
+      },
+      {
+        "id": "gif-sandstorm-025",
+        "name": "Sandstorm 025",
+        "path": "assets/icons/sandstorm_025.gif"
+      },
+      {
+        "id": "gif-sandstorm-026",
+        "name": "Sandstorm 026",
+        "path": "assets/icons/sandstorm_026.gif"
+      },
+      {
+        "id": "gif-sandstorm-027",
+        "name": "Sandstorm 027",
+        "path": "assets/icons/sandstorm_027.gif"
+      },
+      {
+        "id": "gif-sandstorm-028",
+        "name": "Sandstorm 028",
+        "path": "assets/icons/sandstorm_028.gif"
+      },
+      {
+        "id": "gif-scan-pulse-002",
+        "name": "Scan Pulse 002",
+        "path": "assets/icons/scan_pulse_002.gif"
+      },
+      {
+        "id": "gif-scan-pulse-007",
+        "name": "Scan Pulse 007",
+        "path": "assets/icons/scan_pulse_007.gif"
+      },
+      {
+        "id": "gif-scan-pulse-009",
+        "name": "Scan Pulse 009",
+        "path": "assets/icons/scan_pulse_009.gif"
+      },
+      {
+        "id": "gif-scan-pulse-012",
+        "name": "Scan Pulse 012",
+        "path": "assets/icons/scan_pulse_012.gif"
+      },
+      {
+        "id": "gif-scan-pulse-014",
+        "name": "Scan Pulse 014",
+        "path": "assets/icons/scan_pulse_014.gif"
+      },
+      {
+        "id": "gif-scan-pulse-016",
+        "name": "Scan Pulse 016",
+        "path": "assets/icons/scan_pulse_016.gif"
+      },
+      {
+        "id": "gif-scan-pulse-017",
+        "name": "Scan Pulse 017",
+        "path": "assets/icons/scan_pulse_017.gif"
+      },
+      {
+        "id": "gif-scan-pulse-024",
+        "name": "Scan Pulse 024",
+        "path": "assets/icons/scan_pulse_024.gif"
+      },
+      {
+        "id": "gif-scan-pulse-027",
+        "name": "Scan Pulse 027",
+        "path": "assets/icons/scan_pulse_027.gif"
+      },
+      {
+        "id": "gif-scan-pulse-028",
+        "name": "Scan Pulse 028",
+        "path": "assets/icons/scan_pulse_028.gif"
+      },
+      {
+        "id": "gif-scan-pulse-032",
+        "name": "Scan Pulse 032",
+        "path": "assets/icons/scan_pulse_032.gif"
+      },
+      {
+        "id": "gif-screenshot",
+        "name": "Screenshot",
+        "path": "assets/icons/screenshot.gif"
+      },
+      {
+        "id": "gif-search",
+        "name": "Search",
+        "path": "assets/icons/search.gif"
+      },
+      {
+        "id": "gif-shield",
+        "name": "Shield",
+        "path": "assets/icons/shield.gif"
+      },
+      {
+        "id": "gif-shuffle-off",
+        "name": "Shuffle (Kapalı)",
+        "path": "assets/icons/shuffle_off.gif"
+      },
+      {
+        "id": "gif-shuffle-on",
+        "name": "Shuffle (Açık)",
+        "path": "assets/icons/shuffle_on.gif"
+      },
+      {
+        "id": "gif-smile",
+        "name": "Smile",
+        "path": "assets/icons/smile.gif"
+      },
+      {
+        "id": "gif-smoke-001",
+        "name": "Smoke 001",
+        "path": "assets/icons/smoke_001.gif"
+      },
+      {
+        "id": "gif-smoke-004",
+        "name": "Smoke 004",
+        "path": "assets/icons/smoke_004.gif"
+      },
+      {
+        "id": "gif-smoke-014",
+        "name": "Smoke 014",
+        "path": "assets/icons/smoke_014.gif"
+      },
+      {
+        "id": "gif-smoke-021",
+        "name": "Smoke 021",
+        "path": "assets/icons/smoke_021.gif"
+      },
+      {
+        "id": "gif-smoke-025",
+        "name": "Smoke 025",
+        "path": "assets/icons/smoke_025.gif"
+      },
+      {
+        "id": "gif-smoke-027",
+        "name": "Smoke 027",
+        "path": "assets/icons/smoke_027.gif"
+      },
+      {
+        "id": "gif-smoke-028",
+        "name": "Smoke 028",
+        "path": "assets/icons/smoke_028.gif"
+      },
+      {
+        "id": "gif-snow-007",
+        "name": "Snow 007",
+        "path": "assets/icons/snow_007.gif"
+      },
+      {
+        "id": "gif-snowflake",
+        "name": "Snowflake",
+        "path": "assets/icons/snowflake.gif"
+      },
+      {
+        "id": "gif-spotify",
+        "name": "Spotify",
+        "path": "assets/icons/spotify.gif"
+      },
+      {
+        "id": "gif-star-off",
+        "name": "Star (Kapalı)",
+        "path": "assets/icons/star_off.gif"
+      },
+      {
+        "id": "gif-star-on",
+        "name": "Star (Açık)",
+        "path": "assets/icons/star_on.gif"
+      },
+      {
+        "id": "gif-sun-off",
+        "name": "Sun (Kapalı)",
+        "path": "assets/icons/sun_off.gif"
+      },
+      {
+        "id": "gif-sun-on",
+        "name": "Sun (Açık)",
+        "path": "assets/icons/sun_on.gif"
+      },
+      {
+        "id": "gif-target",
+        "name": "Target",
+        "path": "assets/icons/target.gif"
+      },
+      {
+        "id": "gif-terminal",
+        "name": "Terminal",
+        "path": "assets/icons/terminal.gif"
+      },
+      {
+        "id": "gif-test-drive-1987",
+        "name": "Test Drive 1987",
+        "path": "assets/icons/test_drive_1987.gif"
+      },
+      {
+        "id": "gif-thunder-storm-004",
+        "name": "Thunder Storm 004",
+        "path": "assets/icons/thunder_storm_004.gif"
+      },
+      {
+        "id": "gif-trash",
+        "name": "Trash",
+        "path": "assets/icons/trash.gif"
+      },
+      {
+        "id": "gif-trophy",
+        "name": "Trophy",
+        "path": "assets/icons/trophy.gif"
+      },
+      {
+        "id": "gif-twitch",
+        "name": "Twitch",
+        "path": "assets/icons/twitch.gif"
+      },
+      {
+        "id": "gif-upload",
+        "name": "Upload",
+        "path": "assets/icons/upload.gif"
+      },
+      {
+        "id": "gif-volume-down",
+        "name": "Volume Down",
+        "path": "assets/icons/volume_down.gif"
+      },
+      {
+        "id": "gif-volume-off",
+        "name": "Volume (Kapalı)",
+        "path": "assets/icons/volume_off.gif"
+      },
+      {
+        "id": "gif-volume-on",
+        "name": "Volume (Açık)",
+        "path": "assets/icons/volume_on.gif"
+      },
+      {
+        "id": "gif-volume-up",
+        "name": "Volume Up",
+        "path": "assets/icons/volume_up.gif"
+      },
+      {
+        "id": "gif-wand",
+        "name": "Wand (Sihirli Değnek)",
+        "path": "assets/icons/wand.gif"
+      },
+      {
+        "id": "gif-wifi-off",
+        "name": "Wifi (Kapalı)",
+        "path": "assets/icons/wifi_off.gif"
+      },
+      {
+        "id": "gif-wifi-on",
+        "name": "Wifi (Açık)",
+        "path": "assets/icons/wifi_on.gif"
+      },
+      {
+        "id": "gif-window-rain-007",
+        "name": "Window Rain 007",
+        "path": "assets/icons/window_rain_007.gif"
+      },
+      {
+        "id": "gif-x",
+        "name": "X",
+        "path": "assets/icons/x.gif"
+      },
+      {
+        "id": "gif-xenon-027",
+        "name": "Xenon 027 (Mor / Klasik)",
+        "path": "assets/icons/xenon_027.gif"
+      },
+      {
+        "id": "gif-xenon-027-amber",
+        "name": "Xenon 027 (Kehribar / Altın Ateş)",
+        "path": "assets/icons/xenon_027_amber.gif"
+      },
+      {
+        "id": "gif-xenon-027-blue",
+        "name": "Xenon 027 (Elektrik Mavisi)",
+        "path": "assets/icons/xenon_027_blue.gif"
+      },
+      {
+        "id": "gif-xenon-027-crimson",
+        "name": "Xenon 027 (Yakut Kırmızısı)",
+        "path": "assets/icons/xenon_027_crimson.gif"
+      },
+      {
+        "id": "gif-xenon-027-cyan",
+        "name": "Xenon 027 (Cyan / Buz Mavisi)",
+        "path": "assets/icons/xenon_027_cyan.gif"
+      },
+      {
+        "id": "gif-xenon-027-emerald",
+        "name": "Xenon 027 (Zümrüt Yeşili)",
+        "path": "assets/icons/xenon_027_emerald.gif"
+      },
+      {
+        "id": "gif-xenon-027-rose",
+        "name": "Xenon 027 (Kozmik Pembe / Gül)",
+        "path": "assets/icons/xenon_027_rose.gif"
+      },
+      {
+        "id": "gif-youtube",
+        "name": "Youtube",
+        "path": "assets/icons/youtube.gif"
+      }
+    ],
+    "sounds": []
+  }
+}
