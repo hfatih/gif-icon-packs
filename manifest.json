@@ -11,7 +11,7 @@
   },
   "homepage": "https://github.com/Hfatih",
   "repository": "https://github.com/Hfatih",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "requiredActions": [],
   "requiredIntegrations": [],
   "coverImage": "cover.png",
